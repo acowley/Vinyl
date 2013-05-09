@@ -49,6 +49,7 @@ type PlainRec rs = Rec rs Identity
 RNil      <+> xs = xs
 (x :& xs) <+> ys =  x :& (xs <+> ys)
 infixl 8  <+>
+{-# INLINEABLE (<+>) #-}
 
 -- | Shorthand for a record with a single field. Lifts the field's
 -- value into the chosen functor automatically.
